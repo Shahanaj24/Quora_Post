@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page index-page">
+
+    <h1 class="page-title quora-title">Quora Posts</h1>
+
+    <div class="feed">
+        <% for(post of posts){ %>
+
+        <div class="post-card">
+
+            <h3 class="post-username">@<%= post.username %></h3>
+
+            <h4 class="post-content"><%= post.content %></h4>
+
+            <div class="post-links">
+                <a class="post-link view-link" href="http://localhost:8080/posts/<%= post.id %>">
+                    See in Detail
+                </a>
+
+                <a class="post-link edit-link" href="/posts/<%= post.id %>/edit">
+                    Edit
+                </a>
+            </div>
+
+            <form class="delete-form" action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+                <button class="btn btn-delete">Delete</button>
+            </form>
+
+        </div>
+
+        <% } %>
+    </div>
+
+    <div class="create-post-wrapper">
+        <form action="http://localhost:8080/posts/new" method="get">
+            <button class="btn btn-create" type="submit">
+                Create a new Post
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
