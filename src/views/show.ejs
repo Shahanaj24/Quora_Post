@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Individual Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page show-page">
+
+    <h1 class="page-title">Here is Your Post!</h1>
+
+    <p class="post-id">Post id : <%= post.id %></p>
+
+    <div class="post-card">
+        <h3 class="post-username"><%= post.username %></h3>
+        <h4 class="post-content"><%= post.content %></h4>
+    </div>
+
+</body>
+</html>

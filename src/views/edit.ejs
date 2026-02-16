@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Post</title>
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page edit-page">
+
+  <h2 class="page-title">Edit Post</h2>
+
+  <div class="post-meta">
+    <p class="post-id">Post id: <%= post.id %></p>
+    <p class="post-username">User name: <%= post.username %></p>
+  </div>
+
+  <form class="edit-form" action="/posts/<%= post.id %>?_method=PATCH" method="POST">
+    <textarea
+      class="post-textarea"
+      name="content"
+      rows="10"
+      cols="35"><%= post.content %></textarea>
+
+    <div class="form-actions">
+      <button class="btn btn-update" type="submit">Update</button>
+    </div>
+  </form>
+
+  <div class="navigation-link">
+    <a class="back-link" href="/posts/<%= post.id %>">Back</a>
+  </div>
+
+</body>
+</html>
